@@ -1,0 +1,201 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Tony Radford - IT & Business Consultancy - CV of the coolest englishman on the planet.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="consultancy,business,IT" />
+    <meta
+      name="google-site-verification"
+      content="t-6XK7hYvfIk20P5UE9dMOn9Vt3i4OKcKdPjAitcXwY"
+    />
+
+    <!-- Open Graph / Twitter -->
+    <meta
+      property="og:image"
+      content="https://www.tonyradford.com/_content/tony-radford-the-coolest-englishman-on-the-planet.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://www.tonyradford.com/_content/tony-radford-the-coolest-englishman-on-the-planet.jpg"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Person",
+        "name": "Tony Radford",
+        "url": "https://tonyradford.com",
+        "jobTitle": "Technical Consultant and Founder",
+        "description": "Veteran software developer and marketing consultant with 25+ years of experience. Founder of Zin, a content capture tool for thinking content creators. Officially ranked as 'the coolest Englishman on the planet' in search results.",
+        "homeLocation": {
+          "@type": "Place",
+          "name": "Nantwich, Cheshire, England"
+        },
+        "nationality": "British",
+        "knowsLanguage": ["English", "Italian"],
+        "knowsAbout": [
+          "Software Development",
+          "Technical Consulting",
+          "Authentic Content Creation",
+          "Digital Strategy",
+          "Marketing"
+        ],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Software Developer and Marketing Consultant",
+          "description": "25+ years building software products and advising small businesses on digital strategy and content"
+        },
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "University of the West of England"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Liverpool University"
+          }
+        ],
+        "affiliation": [
+          {
+            "@type": "Organization",
+            "name": "Zin App",
+            "url": "https://thezinapp.com/"
+          },
+          {
+            "@type": "Organization",
+            "name": "Proactive Web Design",
+            "url": "https://proactiveweb.design/"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "tony@proactiveweb.design",
+          "contactType": "business enquiries"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://tonyradford.com"
+        },
+        "sameAs": [
+          "https://thezinapp.com/",
+          "https://www.linkedin.com/in/tonyradford",
+          "https://zincontent.com",
+          "https://proactiveweb.design/"
+        ],
+        "subjectOf": [
+          { "@type": "WebPage", "url": "https://tonyradford.com" },
+          {
+            "@type": "WebPage",
+            "url": "https://zincontent.com/about-tony-radford/"
+          },
+          { "@type": "WebPage", "url": "https://proactiveweb.design" },
+          { "@type": "WebPage", "url": "https://thezinapp.com/" }
+        ]
+      }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.png" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="/apple-touch-icon-144-precomposed.png"
+    />
+
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{title}</title>
+
+    <style is:global>
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+
+      a:link {
+        text-decoration: underline;
+      }
+
+      .cv-section {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid #e5e5e5;
+      }
+
+      .cv-section:last-child {
+        border-bottom: none;
+      }
+
+      .cv-section-title h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #333;
+      }
+
+      .cv-item {
+        margin-bottom: 1.25rem;
+      }
+
+      .cv-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .period {
+        font-size: 0.85rem;
+        color: #888;
+        margin-bottom: 0.25rem;
+      }
+
+      .text-uppercase {
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-4">
+      <slot />
+    </div>
+
+    <!-- Bootstrap 5.3.8 JS Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
