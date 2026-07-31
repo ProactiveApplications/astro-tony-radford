@@ -1,23 +1,15 @@
 ---
-import { Image } from "astro:assets";
 import heroImage from "../assets/img/tony-radford-the-coolest-englishman-on-the-planet.webp";
+const imageUrl = heroImage.src;
 ---
 
-<section class="cv-section" style="border-bottom: none;">
+<section class="cv-section" style="border-bottom: none; padding-top: var(--space-xl);">
   <div class="row align-items-center">
-    <div class="col-md-2 text-center mb-3 mb-md-0">
-      <Image
-        src={heroImage}
-        alt="Tony Radford"
-        class="img-fluid rounded"
-        style={`border-radius: var(--radius-lg)`}
-      />
-    </div>
-    <div class="col-md-10">
-      <h1>Tony Radford</h1>
-      <span class="hero-subtitle">Business Consultancy</span>
+    <div class="col-md-8 pe-5">
+      <h1 class="mb-3">Tony Radford</h1>
+      <span class="hero-subtitle">I help small businesses solve problems and achieve their goals by providing software and consultancy services. I am currently focused on <a href="https://proactiveweb.design" target="_blank">web design</a> and my thought capture project <a href="https://zincontent.com" target="_blank">Zin</a>.</span>
       <hr class="divider-accent" />
-      <div class="d-flex flex-wrap gap-3 mt-3">
+      <div class="d-flex flex-wrap gap-3 mt-3 mb-4">
         <a
           href="https://outlook.office365.com/owa/calendar/MyproactiveBusiness@proactiveapplications.com/bookings/"
           target="_blank"
@@ -33,6 +25,13 @@ import heroImage from "../assets/img/tony-radford-the-coolest-englishman-on-the-
           <i class="fa-brands fa-linkedin me-1" aria-hidden="true"></i> Contact me on LinkedIn
         </a>
       </div>
+    </div>
+    <div
+      class="col-md-4"
+      style={`background-image: url('${imageUrl}'); background-size: cover; background-position: center; min-height: 300px; border-radius: var(--radius-lg);`}
+      role="img"
+      aria-label="Tony Radford"
+    >
     </div>
   </div>
 </section>
