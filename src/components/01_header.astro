@@ -1,11 +1,15 @@
 ---
 import heroImage from "../assets/img/tony-radford-the-coolest-englishman-on-the-planet.webp";
-import heroBg from "../assets/img/hero-desktop.webp";
+import heroBgDesktop from "../assets/img/hero-desktop.webp";
+import heroBgTablet from "../assets/img/hero-tablet.webp";
+import heroBgMobile from "../assets/img/hero-mobile.webp";
 const imageUrl = heroImage.src;
-const heroBgUrl = heroBg.src;
+const heroBgDesktopUrl = heroBgDesktop.src;
+const heroBgTabletUrl = heroBgTablet.src;
+const heroBgMobileUrl = heroBgMobile.src;
 ---
 
-<section class="cv-section header-dark-theme" style={`border-bottom: none; padding-top: var(--space-lg); --hero-bg: url('${heroBgUrl}');`}>
+<section class="cv-section header-dark-theme" style={`border-bottom: none; padding-top: var(--space-lg); --hero-bg-desktop: url('${heroBgDesktopUrl}'); --hero-bg-tablet: url('${heroBgTabletUrl}'); --hero-bg-mobile: url('${heroBgMobileUrl}');`}>
   <div class="row align-items-center">
     <div class="col-md-8 pe-5">
       <h1 class="mb-3 text-white">Tony Radford</h1>
@@ -51,7 +55,7 @@ const heroBgUrl = heroBg.src;
   /* TEMPORARY: dark header theme with hero background */
   .header-dark-theme {
     background-color: var(--ink);
-    background-image: var(--hero-bg);
+    background-image: var(--hero-bg-mobile);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -59,6 +63,16 @@ const heroBgUrl = heroBg.src;
     margin-right: calc(-50vw + 50%);
     padding-left: calc(50vw - 50%);
     padding-right: calc(50vw - 50%);
+  }
+  @media (min-width: 768px) {
+    .header-dark-theme {
+      background-image: var(--hero-bg-tablet);
+    }
+  }
+  @media (min-width: 992px) {
+    .header-dark-theme {
+      background-image: var(--hero-bg-desktop);
+    }
   }
   .header-dark-subtitle {
     color: #ccc;
